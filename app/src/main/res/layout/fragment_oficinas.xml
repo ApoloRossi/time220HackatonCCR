@@ -5,6 +5,29 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageView
+        android:id="@+id/triangulo_verde"
+        android:src="@drawable/ic_triangulo_verde"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        app:iconifiedByDefault="false"
+        app:defaultQueryHint="poesia, musica, pintura, canto"
+        app:queryHint="poesia, musica, pintura, canto"
+        android:layout_width="0dp"
+        android:elevation="8dp"
+        app:queryBackground="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_rounded_for_search_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/first_guide"
         android:orientation="horizontal"
@@ -19,13 +42,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.6"/>
 
-    <ImageView
-        android:id="@+id/triangulo_verde"
-        android:src="@drawable/ic_triangulo_verde"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -45,15 +62,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/second_guide" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/oficinas_list"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/search"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="0dp"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:id="@+id/list_container"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:text="Pesquise pelas oficinas que sejam de seu interente"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/oficinas_list"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

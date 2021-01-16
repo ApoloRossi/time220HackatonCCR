@@ -22,11 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        android:background="@color/design_default_color_primary"
+        android:background="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:itemBackground="@color/design_default_color_primary"
+        app:itemBackground="@color/purple_500"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:menu="@menu/navigation"/>
