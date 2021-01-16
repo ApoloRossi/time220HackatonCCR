@@ -1,4 +1,4 @@
-package com.apolo.arteapp.presentation
+package com.apolo.arteapp.presentation.home
 
 interface HomeContract {
 
