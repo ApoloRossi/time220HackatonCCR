@@ -6,6 +6,10 @@ plugins {
 android {
     compileSdkVersion 29
 
+    def STRING = "String"
+    def API_ENDPOINT = "API_ENDPOINT"
+    def API_KEY = "API_KEY"
+
     defaultConfig {
         applicationId "com.apolo.arteapp"
         minSdkVersion 22
@@ -14,6 +18,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField STRING, API_ENDPOINT, '"https://smaple.api.org/3/"'
+        buildConfigField STRING, API_KEY, '"b3a35d2b18aa95389f72b881c0ca08f8"'
     }
 
     buildTypes {

@@ -1,7 +1,8 @@
-package com.apolo.arteapp
+package com.apolo.arteapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.apolo.arteapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
