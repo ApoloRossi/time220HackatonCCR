@@ -37,8 +37,11 @@ class OficinasFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        oficinasRecyclerList.adapter = OficinasAdapter(MockDataUtil.getOficinasList()) {
-            startActivity(Intent(requireContext(), OficinaDetailsActivity::class.java))
+        oficinasRecyclerList.adapter = OficinasAdapter(MockDataUtil.getOficinasList()) { oficina ->
+            val intent = Intent(requireContext(), OficinaDetailsActivity::class.java)
+            intent.putExtra("oficina", oficina)
+
+            startActivity(intent)
         }
 
         oficinasRecyclerList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)

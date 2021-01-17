@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ArteApp</string>
+    <string name="ong_name"><b>ONG:</b> %s</string>
 </resources>
