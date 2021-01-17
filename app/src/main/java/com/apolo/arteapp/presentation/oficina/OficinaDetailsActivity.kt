@@ -19,10 +19,15 @@ class OficinaDetailsActivity : AppCompatActivity() {
     lateinit var ongName : TextView
     lateinit var description : TextView
     lateinit var picture : ImageView
-    lateinit var eventLink : TextView
-    lateinit var acceptButton : TextView
+    lateinit var subscribeButton : TextView
+
     lateinit var instagramAddress : TextView
     lateinit var instagramGroup : Group
+
+    lateinit var youtubeAddress : TextView
+    lateinit var youtubeGroup : Group
+
+
 
     val oficina : OficinaView by lazy {
         intent.extras?.getSerializable("oficina") as OficinaView
@@ -32,44 +37,72 @@ class OficinaDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.oficina_details_activity)
 
-        title  = findViewById(R.id.title)
-        ongName  = findViewById(R.id.ong_name)
-        description = findViewById(R.id.description)
-        picture  = findViewById(R.id.picture)
-        acceptButton = findViewById(R.id.accept_button)
-        eventLink = findViewById(R.id.event_link)
-        instagramGroup = findViewById(R.id.instagram_info)
-        instagramAddress = findViewById(R.id.instagram_address)
+        bindViews()
+        setupYoutubeClickListener()
+        setupLayoutInfos()
+        setupSubscribeButton()
+    }
 
-
+    private fun setupLayoutInfos() {
         title.text = oficina.title
         ongName.text = getString(R.string.ong_name, oficina.ongName)
         description.text = oficina.description
-        eventLink.text = oficina.eventLink
+        Picasso.get().load(oficina.pictures[0]).into(picture)
 
         if (oficina.instagram.isNotEmpty()) {
             instagramGroup.visibility = View.VISIBLE
             instagramAddress.text = oficina.instagram
 
-            instagramAddress.setOnClickListener {
-                val uri = Uri.parse("http://instagram.com/_u/" + oficina.instagram)
-                val likeIng = Intent(Intent.ACTION_VIEW, uri)
-                likeIng.`package` = "com.instagram.android"
-                try {
-                    startActivity(likeIng)
-                } catch (e: ActivityNotFoundException) {
+            setupInstagramClickListener()
+        }
+    }
 
-                    startActivity(Intent (Intent.ACTION_VIEW,
-                            Uri.parse("http://instagram.com/" + oficina.instagram)))
-                }
+    private fun setupSubscribeButton() {
+        subscribeButton.setOnClickListener {
+            youtubeGroup.visibility = View.VISIBLE
+            subscribeButton.text = "CONFIRMADO"
+        }
+    }
+
+    private fun setupInstagramClickListener() {
+        instagramAddress.setOnClickListener {
+            val uri = Uri.parse("http://instagram.com/_u/" + oficina.instagram)
+            val likeIng = Intent(Intent.ACTION_VIEW, uri)
+            likeIng.`package` = "com.instagram.android"
+            try {
+                startActivity(likeIng)
+            } catch (e: ActivityNotFoundException) {
+
+                startActivity(Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://instagram.com/" + oficina.instagram)))
             }
         }
+    }
 
-        Picasso.get().load(oficina.pictures[0]).into(picture)
+    private fun bindViews() {
+        title = findViewById(R.id.title)
+        ongName = findViewById(R.id.ong_name)
+        description = findViewById(R.id.description)
+        picture = findViewById(R.id.picture)
+        subscribeButton = findViewById(R.id.accept_button)
+        instagramGroup = findViewById(R.id.instagram_info)
+        instagramAddress = findViewById(R.id.instagram_address)
+        youtubeGroup  = findViewById(R.id.youtube_info)
+        youtubeAddress = findViewById(R.id.youtube_address)
 
-        acceptButton.setOnClickListener {
-            eventLink.visibility = View.VISIBLE
-            acceptButton.text = "CONFIRMADO"
+    }
+
+    private fun setupYoutubeClickListener() {
+        youtubeAddress.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(oficina.eventLink)
+            intent.setPackage("com.google.android.youtube")
+            try {
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW,
+                        Uri.parse(oficina.eventLink)))
+            }
         }
     }
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/triangulo_verde"
@@ -67,13 +67,26 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/description" />
 
+                <ImageView
+                    android:id="@+id/instagram_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_instagram"
+                    app:layout_constraintEnd_toStartOf="@+id/instagram_address"
+                    app:layout_constraintTop_toBottomOf="@+id/picture" />
+
+
                 <TextView
                     android:id="@+id/ong_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
                     android:justificationMode="inter_word"
                     android:text="ONG: Passos da Criança"
                     android:textColor="@color/black"
@@ -98,12 +111,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ong_name" />
 
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/instagram_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="instagram_icon, instagram_address"
+                    tools:visibility="visible" />
+
                 <TextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginTop="16dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:text="Oficina de conto e poesia"
                     android:textAlignment="center"
@@ -114,52 +135,49 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.Group
-                    android:id="@+id/instagram_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:constraint_referenced_ids="instagram_icon, instagram_address"
-                    android:visibility="gone"
-                    tools:visibility="visible"/>
-
-                <ImageView
-                    android:id="@+id/instagram_icon"
-                    android:src="@mipmap/ic_instagram"
-                    android:layout_marginStart="16dp"
-                    app:layout_constraintEnd_toStartOf="@+id/instagram_address"
-                    android:scaleType="centerCrop"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/picture"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"/>
-
                 <TextView
                     android:id="@+id/instagram_address"
-                    app:layout_constraintTop_toTopOf="@id/instagram_icon"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginEnd="16dp"
                     android:textColor="@android:color/black"
                     app:layout_constraintBottom_toBottomOf="@+id/instagram_icon"
-                    android:layout_marginStart="8dp"
-                    tools:text="apolorossi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/instagram_icon"
+                    tools:text="apolorossi" />
 
-                <TextView
-                    android:id="@+id/event_link"
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/youtube_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:autoLink="web"
-                    android:text="https://www.youtube.com/watch?v=C_qDdVOyNgwhttps://www.youtube.com/watch?v=C_qDdVOyNgw"
-                    android:textAlignment="center"
                     android:visibility="gone"
-                    app:layout_constraintBottom_toTopOf="@+id/accept_button"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:constraint_referenced_ids="youtube_icon, youtube_address"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/youtube_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_youtube"
+                    app:layout_constraintEnd_toStartOf="@+id/youtube_address"
                     app:layout_constraintTop_toBottomOf="@+id/instagram_icon" />
 
+                <TextView
+                    android:id="@+id/youtube_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Link de acesso"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/youtube_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/youtube_icon" />
 
                 <TextView
                     android:id="@+id/accept_button"
@@ -180,8 +198,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_link" />
-
+                    app:layout_constraintTop_toBottomOf="@+id/youtube_icon" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
