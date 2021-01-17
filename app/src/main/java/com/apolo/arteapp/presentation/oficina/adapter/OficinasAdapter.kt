@@ -3,12 +3,14 @@ package com.apolo.arteapp.presentation.oficina.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.apolo.arteapp.R
+import com.apolo.arteapp.data.model.OficinaView
 
 
-class OficinasAdapter (val oficinasList : List<String>, val onOficinaClick: (oficina : String) -> Unit) : RecyclerView.Adapter<OficinasAdapter.OficinaViewHolder>() {
+class OficinasAdapter (val oficinasList : List<OficinaView>, val onOficinaClick: (oficina : OficinaView) -> Unit) : RecyclerView.Adapter<OficinasAdapter.OficinaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OficinaViewHolder {
 
@@ -27,10 +29,18 @@ class OficinasAdapter (val oficinasList : List<String>, val onOficinaClick: (ofi
         holder.bind(oficinasList[position])
     }
 
-    public class OficinaViewHolder(val view : View, val onOficinaClick: (oficina : String) -> Unit) : RecyclerView.ViewHolder(view) {
+    public class OficinaViewHolder(val view : View, val onOficinaClick: (oficina : OficinaView) -> Unit) : RecyclerView.ViewHolder(view) {
 
-        fun bind(oficina : String) {
+        fun bind(oficina : OficinaView) {
+            val title = view.findViewById<TextView>(R.id.title)
+            val oficinaType = view.findViewById<TextView>(R.id.oficina_type)
+            val picture = view.findViewById<ImageView>(R.id.picture)
             val showDetailsButton = view.findViewById<TextView>(R.id.show_details_button)
+
+            title.text = oficina.title
+            oficinaType.text = oficina.artType
+//            picture.drawable = oficina.pictures[0]
+
             showDetailsButton.setOnClickListener {
                 onOficinaClick(oficina)
             }

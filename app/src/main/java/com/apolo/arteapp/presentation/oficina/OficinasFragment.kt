@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.apolo.arteapp.R
 import com.apolo.arteapp.presentation.oficina.adapter.OficinasAdapter
+import com.apolo.arteapp.util.MockDataUtil
 
 class OficinasFragment : Fragment() {
 
@@ -36,8 +37,7 @@ class OficinasFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        oficinasRecyclerList.adapter = OficinasAdapter(listOf("Apolo", "Apolo","Apolo","Apolo","Apolo","Apolo","Apolo")) {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+        oficinasRecyclerList.adapter = OficinasAdapter(MockDataUtil.getOficinasList()) {
             startActivity(Intent(requireContext(), OficinaDetailsActivity::class.java))
         }
 
