@@ -79,8 +79,9 @@
 
             <TextView
                 android:id="@+id/title"
-                android:text="Pesquise pelas oficinas que sejam de seu interente"
+                android:text="Eae? Que tal conferir as nossas oficinas? Ah e você também pode realizar pesquisas"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="parent"
