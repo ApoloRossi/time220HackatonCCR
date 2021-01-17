@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.apolo.arteapp.R
 import com.apolo.arteapp.data.model.OficinaView
+import com.squareup.picasso.Picasso
 
 
 class OficinasAdapter (val oficinasList : List<OficinaView>, val onOficinaClick: (oficina : OficinaView) -> Unit) : RecyclerView.Adapter<OficinasAdapter.OficinaViewHolder>() {
@@ -39,7 +40,8 @@ class OficinasAdapter (val oficinasList : List<OficinaView>, val onOficinaClick:
 
             title.text = oficina.title
             oficinaType.text = oficina.artType
-//            picture.drawable = oficina.pictures[0]
+
+            Picasso.get().load(oficina.pictures[0]).into(picture)
 
             showDetailsButton.setOnClickListener {
                 onOficinaClick(oficina)

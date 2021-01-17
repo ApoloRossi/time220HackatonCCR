@@ -20,7 +20,7 @@ object MockDataUtil {
                             "Durante o mês de janeiro, a parte externa da Oficina Cultural Juan Serrano será “transformada” em uma grande sala de Cinema ao Ar Livre. Como uma alternativa emergente de democratização do acesso à sétima arte, todas as exibições serão realizadas gratuitamente. Com classificação livre, os filmes serão selecionados a partir da licença guarda-chuva e seguirão protocolos rígidos como: público sentado com distanciamento, área aberta, utilização de máscaras e higienização das mãos, entre outros.",
                             "https://www.youtube.com/watch?v=DL5wu-MFJ-o",
                             "Cinema",
-                            listOf("https://static.todamateria.com.br/upload/54/f9/54f9f8efdc4dd-grafite-arte-urbana-large.jpg", "https://static.todamateria.com.br/upload/54/f9/54f9f8efdc4dd-grafite-arte-urbana-large.jpg")
+                            listOf("https://oficinasculturais.org.br/wp-content/uploads/2020/12/OCMJS_CINEMA-AO-AR-LIVRE_cr%C3%A9dito-Foto-OCJS_site-e1609279312192.jpg")
                     ),
                     OficinaView(
                             "Selfie sobre tela",
@@ -63,7 +63,7 @@ object MockDataUtil {
                                     "É obrigatório o uso de máscara.",
                             "https://oficinasculturais.org.br/atividade/aulas-abertas-vive%cc%82ncia-de-capoeira-angola-vamos-vadia/",
                             "Luta",
-                            listOf("https://oficinasculturais.org.br/wp-content/uploads/2020/12/OCAV_HORTA-VERTICAL-E-SEMENTEIRAS_cr%C3%A9dito-Foto-Divulga%C3%A7%C3%A3o-e1608314569848.jpg")
+                            listOf("https://oficinasculturais.org.br/wp-content/uploads/2021/01/OCOA_VIVE%CC%82NCIA-DE-CAPOEIRA-ANGOLA-VAMOS-VADIA%CC%81_Cr%C3%A9dito-Foto-Divulga%C3%A7%C3%A3o-e1609895399162.jpeg")
                     )
             )
 
