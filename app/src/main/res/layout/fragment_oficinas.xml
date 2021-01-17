@@ -13,21 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search"
-        app:iconifiedByDefault="false"
-        app:defaultQueryHint="poesia, musica, pintura, canto"
-        app:queryHint="poesia, musica, pintura, canto"
-        android:layout_width="0dp"
-        android:elevation="8dp"
-        app:queryBackground="@android:color/transparent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/background_rounded_for_search_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/first_guide"
         android:orientation="horizontal"
@@ -41,8 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.6"/>
-
-
 
     <ImageView
         android:id="@+id/imageView"
@@ -61,6 +44,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/second_guide" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        app:iconifiedByDefault="false"
+        app:defaultQueryHint="poesia, musica, pintura, canto"
+        app:queryHint="poesia, musica, pintura, canto"
+        android:layout_width="0dp"
+        android:elevation="8dp"
+        app:queryBackground="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_rounded_for_search_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
