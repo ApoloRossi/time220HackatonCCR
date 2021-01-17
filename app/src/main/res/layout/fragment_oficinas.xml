@@ -70,41 +70,58 @@
         android:layout_width="0dp"
         android:layout_height="0dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/list_container"
             android:layout_width="match_parent"
-            android:orientation="vertical"
             android:background="@android:color/transparent"
             android:layout_height="wrap_content">
 
+            <View
+                android:id="@+id/oficina_banner"
+                android:background="@drawable/background_rounded_banner"
+                android:elevation="4dp"
+                app:layout_constraintTop_toTopOf="@id/title"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="0dp"/>
+
             <TextView
                 android:id="@+id/title"
+                android:drawableLeft="@drawable/ic_masks"
+                android:elevation="8dp"
                 android:text="Eae? Que tal conferir as nossas oficinas? Ha! E você também pode realizar pesquisas"
                 android:textSize="18sp"
-                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintTop_toTopOf="parent"
                 android:textColor="@android:color/black"
                 android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/search"
-                android:layout_margin="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/oficinas_list"
                 app:layout_constraintTop_toBottomOf="@+id/title"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"/>
 
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.core.widget.NestedScrollView>

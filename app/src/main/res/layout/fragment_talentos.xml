@@ -20,6 +20,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <View
+        android:id="@+id/artists_banner"
+        android:background="@drawable/background_rounded_banner"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="@id/title"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:drawableLeft="@drawable/ic_paint_board"
+        android:elevation="8dp"
+        android:text="Conheça o trabalho de artistas locais aqui do ArtMosaico!\n Quer divulgar seu trabalho? \nFaleConosco"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
     <ImageView
         android:id="@+id/triangulo_verde"
         android:src="@drawable/ic_triangulo_verde"
@@ -62,7 +96,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/artists_list"
-        app:layout_constraintTop_toBottomOf="@+id/search"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

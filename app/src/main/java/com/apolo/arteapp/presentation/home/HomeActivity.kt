@@ -34,11 +34,9 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         when(item.itemId) {
             R.id.navigation_artes -> {
                 openFragment(TalentosFragment.newInstance())
-                Toast.makeText(this, "Artes", Toast.LENGTH_LONG).show()
             }
             else -> {
                 openFragment(OficinasFragment.newInstance())
-                Toast.makeText(this, "Oficinas", Toast.LENGTH_LONG).show()
             }
         }
 

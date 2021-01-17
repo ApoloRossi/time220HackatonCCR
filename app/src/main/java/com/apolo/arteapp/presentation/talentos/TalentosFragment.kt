@@ -1,6 +1,7 @@
 package com.apolo.arteapp.presentation.talentos
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ class TalentosFragment : Fragment() {
 
 
     lateinit var artistRecyclerList : RecyclerView
+    lateinit var artistsBanner : View
 
     companion object {
         fun newInstance() = TalentosFragment()
@@ -31,6 +33,8 @@ class TalentosFragment : Fragment() {
         val layout = inflater.inflate(R.layout.fragment_talentos, container, false)
 
         artistRecyclerList = layout.findViewById(R.id.artists_list)
+        artistsBanner = layout.findViewById(R.id.artists_banner)
+
 
 
         return layout
@@ -47,6 +51,18 @@ class TalentosFragment : Fragment() {
         }
 
         artistRecyclerList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        artistsBanner.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Participação na plataforma")
+            intent.putExtra(Intent.EXTRA_EMAIL, "artmosaico@gmail.com")
+            intent.data = Uri.parse("mailto:" + "artmosaico@gmail.com")
+            if (intent.resolveActivity(requireActivity().packageManager) != null) {
+                startActivity(intent)
+            }
+        }
+
 
     }
 }
