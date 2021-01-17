@@ -8,4 +8,6 @@ data class OficinaView(val title: String,
                        val description: String,
                        val eventLink: String,
                        val artType: String,
-                       val pictures: List<String>) : Serializable
+                       val pictures: List<String>,
+                       val instagram : String = "",
+                       val telefone : String = "") : Serializable

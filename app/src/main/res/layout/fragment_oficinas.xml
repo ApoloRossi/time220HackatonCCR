@@ -79,7 +79,7 @@
 
             <TextView
                 android:id="@+id/title"
-                android:text="Eae? Que tal conferir as nossas oficinas? Ah e você também pode realizar pesquisas"
+                android:text="Eae? Que tal conferir as nossas oficinas? Ha! E você também pode realizar pesquisas"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
