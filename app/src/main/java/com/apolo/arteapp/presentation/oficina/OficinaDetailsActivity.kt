@@ -45,7 +45,9 @@ class OficinaDetailsActivity : AppCompatActivity() {
 
     private fun setupLayoutInfos() {
         title.text = oficina.title
-        ongName.text = getString(R.string.ong_name, oficina.ongName)
+
+
+
         description.text = oficina.description
         Picasso.get().load(oficina.pictures[0]).into(picture)
 
@@ -54,6 +56,9 @@ class OficinaDetailsActivity : AppCompatActivity() {
             instagramAddress.text = oficina.instagram
 
             setupInstagramClickListener()
+            ongName.text = getString(R.string.ong_name, oficina.ongName)
+        } else {
+            ongName.text = getString(R.string.ong_name, oficina.ongName)
         }
     }
 
